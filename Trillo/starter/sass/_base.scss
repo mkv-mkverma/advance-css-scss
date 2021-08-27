@@ -39,6 +39,13 @@ Grey dark 3: #999
   --line: 1px solid var(--color-grey-light-2);
 }
 
+// breakpoint
+$bp-largest: 75em; // 1200px (1200/16 = 75.00)
+$bp-large: 68.75em; // 1100px (1100/16 = 68.75)
+$bp-medium: 56.25em; // 900px (900/16 = 56.25)
+$bp-small: 37.5em; // 600px (600/16 = 37.50)
+$bp-smallest: 31.25em; // 500px (500/16 = 31.25)
+
 * {
   margin: 0;
   padding: 0;
@@ -52,7 +59,13 @@ Grey dark 3: #999
 
 html {
   box-sizing: border-box;
+  // (10/16 * 100 = 62.5)
   font-size: 62.5%; // 1rem  = 10px
+
+  @media only screen and (max-width: $bp-large) {
+    // (8/16 * 100 = 50)
+    font-size: 50%; // 1rem  = 10px
+  }
 }
 
 body {
